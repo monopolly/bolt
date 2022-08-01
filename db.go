@@ -15,7 +15,7 @@ type DB struct {
 
 func New(path string, buckets ...string) (a *DB, err error) {
 	a = new(DB)
-	db, err := bbolt.Open(path, os.ModePerm, nil)
+	db, err := bbolt.Open(path, os.ModePerm, bbolt.DefaultOptions)
 	if err != nil {
 		return
 	}

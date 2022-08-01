@@ -24,6 +24,10 @@ func New(path string, buckets ...string) (a *DB, err error) {
 	return
 }
 
+func (a *DB) Close() {
+	a.db.Close()
+}
+
 //helper to create buckets
 func (a *DB) Buckets(buckets ...string) {
 	if a == nil {
